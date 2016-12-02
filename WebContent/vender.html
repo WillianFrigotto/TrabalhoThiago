@@ -1,0 +1,40 @@
+<div class="container" ng-controller="VendaController">
+	<div class="mt-1">
+		<h1>Vender Produtos</h1>
+		<hr />
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label for="selecioneProduto">Selecione o produto para venda</label>
+				<select class="form-control" id="exampleSelect1" ng-model="itemVenda.produto" ng-options="p as p.nome for p in listaProdutos track by p.id">
+					<option disabled="yes" selected="selected"></option>
+					<option value="texto">Não Exitem produtos Cadastrados</option>
+				</select>
+			</div>
+			<button type="button" class="btn btn-default btn-lg" ng-click="adicionarIten()">Inserir</button>
+		</div>
+
+		<div class="col-md-6">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Quantidade</th>
+						<th>Descrição</th>
+						<th>ValorUnitário</th>
+					</tr>
+				</thead>
+				<tr ng-repeat="p in venda.itens track by $index">
+					<td><input type="text" class="form-control" id="quantidade"
+								ng-model="p.quantidade"></td>
+					<td>{{p.produto.nome}}</td>
+					<td>{{p.produto.preco}}</td>
+				</tr>
+			</table>
+			
+			<button type="button" class="btn btn-success btn-lg" ng-click="salvar()">Fechar
+				compra</button>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,54 @@
+<div class="container" ng-controller="ProdutoController">
+	<div class="mt-1">
+		<h1>Alterar Produtos</h1>
+		<hr />
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="form-group">
+				<label for="selecioneProduto">Selecione o produto que deseja
+					alterar</label> <select class="form-control" id="exampleSelect1" ng-model="produto"
+					ng-options="p as p.nome for p in listaProdutos track by p.id">
+					<option disabled="yes" selected="selected"></option>
+					<option value="texto">Não Exitem produtos Cadastrados</option>
+				</select>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<form>
+				<div class="form-group row">
+					<label for="nome" class="col-xs-2 col-form-label">Nome</label>
+					<div class="col-xs-10">
+						<input class="form-control" type="text" value="" id="nome" ng-model="produto.nome">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="fornecedor" class="col-xs-2 col-form-label">Fornecedor</label>
+					<div class="col-xs-10">
+						<input class="form-control" type="text" value="" id="fornecedor" ng-model="produto.fornecedor">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="preco" class="col-xs-2 col-form-label">Preço</label>
+					<div class="col-xs-10">
+						<input class="form-control" type="text" value="" id="preco" ng-model="produto.preco">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="descricao" class="col-xs-2 col-form-label">Descrição</label>
+					<div class="col-xs-10">
+						<textarea class="form-control" id="descricao" rows="3" ng-model="produto.descricao"></textarea>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="quantidade" class="col-xs-2 col-form-label">Quantidade</label>
+					<div class="col-xs-10">
+						<input class="form-control" type="text" value="" id="quantidade" ng-model="produto.quantidade">
+					</div>
+				</div>
+				<button type="button" class="btn btn-success btn-lg" ng-click="salvar()">Alterar</button>
+			</form>
+		</div>
+	</div>
+</div>
